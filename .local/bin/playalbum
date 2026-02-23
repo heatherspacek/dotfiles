@@ -1,0 +1,2 @@
+SEL=$(mpc ls | shuf | rofi -dmenu -i -l 7) && \
+mpc clear && mpc add "$SEL" && mpc play

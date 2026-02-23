@@ -1,0 +1,3 @@
+NAME="$1"
+NEW=$(zenity --entry --text="new ws name")
+swaymsg rename workspace to $NEW

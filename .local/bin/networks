@@ -1,0 +1,16 @@
+OPT1="Wifi\nBluetooth"
+RESP1=$(echo -e $OPT1 | rofi -dmenu -i -p "Connection Menu")
+
+if [[ $RESP1 == "Wifi" ]]; then
+    RESP2=$(nmcli -f BSSID,SSID,BARS,SECURITY device wifi list --rescan no | rofi -dmenu -i -p "Wifi Connections:" | awk '{print $1}') && \
+    nmcli device wifi connect $RESP2
+elif [[ $RESP1 == "Bluetooth" ]]; then
+    RESP2=$(bluetoothctl devices Paired | grep Device | rofi -dmenu -i -p "Paired Devices:" | awk '{print $2}') && \
+    bluetoothctl connect $RESP2
+fi
+
+# bluetoothctl
+# nmcli
+# FURTHER OPTIONS--
+# pair, unpair, --> bluetoothctl --timeout 5 scan on
+# authentication, etc. for wifi

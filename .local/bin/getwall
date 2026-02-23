@@ -1,0 +1,18 @@
+WP=$HOME/Pictures/wallpapers
+NW=$(ls -l $WP | wc -l)
+WALSAT=$HOME/.local/state/walsat
+CURRWAL=$HOME/.local/state/currwal
+case $1 in
+    up)
+	echo $(python -c "a = $(cat $WALSAT) + 0.10; print(1.0) if a > 1 else print(a)") > $WALSAT
+	;;
+    down)
+	echo $(python -c "a = $(cat $WALSAT) - 0.10; print(0.0) if a < 0 else print(a)") > $WALSAT
+	;;
+   *)
+	curl -L https://picsum.photos/2256/1504 > "$WP/$(($NW+1)).jpg"
+	echo "$WP/$(($NW+1)).jpg" > $CURRWAL
+	wal -i $(cat $CURRWAL) --saturate $(cat $WALSAT)
+	;;
+esac
+wal -i $(cat $CURRWAL) --saturate $(cat $WALSAT)

@@ -1,0 +1,14 @@
+#!/bin/bash
+GH=$HOME/Documents/GitHub
+PROJ=$(ls $GH | rofi -dmenu -i -p "Open Project")
+if [ -n "$PROJ" ]; then
+(
+    swaymsg splitv;
+    code "$GH/$PROJ";
+    sleep 1.0;
+    foot -D "$GH/$PROJ" &
+    sleep 0.1;
+    swaymsg [app_id='foot'] resize set height 25 ppt
+)
+fi
+

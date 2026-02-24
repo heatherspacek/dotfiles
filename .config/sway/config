@@ -19,6 +19,7 @@ font "Inconsolata Nerd Font 11"
 for_window [app_id="$term"] border pixel 2
 for_window [app_id="firefox"] border pixel 2
 for_window [app_id="code"] border pixel 2
+for_window [app_id="discord"] floating enable
 bindsym XF86AudioMedia exec playalbum
 bindsym $mod+N exec networks
 exec export ELECTRON_OZONE_PLATFORM_HINT="wayland"
@@ -27,7 +28,7 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioNext exec mpc next
 bindsym $mod+Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
-
+bindsym $mod+Escape exec dash
 bindsym $mod+p exec getwall
 bindsym $mod+g exec gitselect
 bindsym $mod+d exec discordup
@@ -55,10 +56,10 @@ gaps inner 3
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+ exec swayidle -w \
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when

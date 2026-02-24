@@ -1,0 +1,7 @@
+#!/bin/bash
+swaymsg workspace 9:dash, splitv
+foot -T "dash-ff1" -H colourfetch & foot -T "dash-top" colourtop & foot -T "dash-music" colourmusic &
+sleep 0.12
+swaymsg [title="dash-ff1"] splith, move left, splitv
+
+swaymsg bindsym Escape exec undash

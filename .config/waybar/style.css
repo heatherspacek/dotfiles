@@ -1,7 +1,9 @@
+@import url('file:///home/heather/.cache/wal/colors-waybar.css');
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: 'ProggyClean Nerd Font Propo';
+    font-size: 16px;
 }
 
 window#waybar {
@@ -50,7 +52,7 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background-color: #a37800;
+    background-color: #6e6b65;
 }
 
 #workspaces button {
@@ -259,6 +261,8 @@ label:focus {
 #mpd {
     background-color: #66cc99;
     color: #2a5c45;
+    min-width: 15px;
+    /* max-width: 25%; */
 }
 
 #mpd.disconnected {

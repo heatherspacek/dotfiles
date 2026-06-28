@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 GH=$HOME/Documents/GitHub
 PROJ=$(ls $GH | rofi -dmenu -i -p "Open Project")
 if [ -n "$PROJ" ]; then

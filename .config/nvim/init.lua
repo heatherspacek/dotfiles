@@ -26,12 +26,10 @@ vim.opt.termguicolors = false
 -- plugins
 -- =======
 vim.pack.add({
-    "https://github.com/nvim-telescope/telescope.nvim",
-    "https://github.com/nvim-lua/plenary.nvim",
-    -- "https://github.com/windwp/nvim-autopairs",
     "https://github.com/dylanaraps/wal.vim",
     "https://github.com/nvim-treesitter/nvim-treesitter",
     "https://github.com/nvim-treesitter/nvim-treesitter-context",
+    "https://github.com/nvim-mini/mini.nvim"
     })
 vim.lsp.config['ty'] = {
 	cmd = { 'uvx', 'ty', 'server' },
@@ -45,4 +43,12 @@ require('treesitter-context').setup{
 	max_lines=5,
 	separator='.',
 }
+require('mini.icons').setup()
+require('mini.diff').setup()
+require('mini.git').setup()
+require('mini.tabline').setup()
+require('mini.statusline').setup()
+require('mini.completion').setup()
+require('mini.starter').setup()
+require('mini.files').setup({ windows = { preview = true } })
 vim.cmd.colorscheme("wal")

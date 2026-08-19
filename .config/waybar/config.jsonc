@@ -26,9 +26,9 @@
         "tray"
     ],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
+    "sway/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": true,
     //     "warp-on-scroll": false,
     //     "format": "{name}: {icon}",
     //     "format-icons": {
@@ -41,7 +41,7 @@
     //         "focused": "",
     //         "default": ""
     //     }
-    // },
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -103,7 +103,7 @@
         // }
     },
     "clock": {
-        // "timezone": "America/New_York",
+        "timezone": "America/Edmonton",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 	"format": "{:%a %m/%d %H:%M}",
         "format-alt": "{:%Y-%m-%d}"

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+discord_conns=$(busctl --user list | grep Discord | awk '{print $1}')
+
+if [ -z "$discord_conns" ]; then
+    discord &
+fi
+
+echo "$discord_conns" | while read conn; do
+    busctl --user call "$conn" /StatusNotifierItem org.kde.StatusNotifierItem Activate ii 0 0 2>/dev/null && break
+done
+
+swaymsg bindsym Escape exec discorddown
